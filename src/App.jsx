@@ -1,40 +1,17 @@
 
 import React from "react";
 import Weather from "./Weather";
-// function getWeatherIcon(wmoCode) {
-//   const icons = new Map([
-//     [[0], "☀️"],
-//     [[1], "🌤"],
-//     [[2], "⛅️"],
-//     [[3], "☁️"],
-//     [[45, 48], "🌫"],
-//     [[51, 56, 61, 66, 80], "🌦"],
-//     [[53, 55, 63, 65, 57, 67, 81, 82], "🌧"],
-//     [[71, 73, 75, 77, 85, 86], "🌨"],
-//     [[95], "🌩"],
-//     [[96, 99], "⛈"],
-//   ]);
-//   const arr = [...icons.keys()].find((key) => key.includes(wmoCode));
-//   if (!arr) return "NOT FOUND";
-//   return icons.get(arr);
-// }
-
 class App extends React.Component {
+    state = { location: "New Delhi",loading:false ,displayLocation:"",weather:{}}
 
-    constructor(props) {
-        super(props);
-        this.state = { location: "New Delhi",loading:false ,displayLocation:"",weather:{}}
-        // normal or reqular function should be bind here
-        this.fetchWeather = this.fetchWeather.bind(this)
-        this.convertToFlag = this.convertToFlag.bind(this)
-    }
-
+    // you does not need to initialize the state inside the constructor method modern js provide the new way to initialize the satate without using the constructor method
+    
 
     handleInputValue = (e) => {
         this.setState({ location: e.target.value })
     }
 
-    convertToFlag(countryCode) {
+    convertToFlag =(countryCode) =>{
         const codePoints = countryCode
             .toUpperCase()
             .split("")
@@ -42,7 +19,7 @@ class App extends React.Component {
         return String.fromCodePoint(...codePoints);
     }
 
-    async fetchWeather() {
+     fetchWeather = async()=> {
         try {
             this.setState({loading:true})
             // 1) Getting location (geocoding)
