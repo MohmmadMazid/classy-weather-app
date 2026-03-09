@@ -1,16 +1,143 @@
-# React + Vite
+# 🌤 Classy Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple weather application built using **React Class Components**.
+The app allows users to search for a location and view the weather forecast using the **Open-Meteo API**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+* Search weather by **city name**
+* Fetch **geolocation data** using Open-Meteo Geocoding API
+* Display **daily weather forecast**
+* Show **weather icons** based on weather codes
+* Display **minimum and maximum temperatures**
+* Convert **country codes to flag emojis**
+* Built completely using **React Class Components**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+* Open-Meteo API
+
+---
+
+## 📦 APIs Used
+
+### 1️⃣ Geocoding API
+
+Used to get latitude and longitude from a location name.
+
+```
+https://geocoding-api.open-meteo.com/v1/search?name={CITY_NAME}
+```
+
+### 2️⃣ Weather Forecast API
+
+Used to fetch daily weather data.
+
+```
+https://api.open-meteo.com/v1/forecast?latitude={LAT}&longitude={LON}&timezone={TIMEZONE}&daily=weathercode,temperature_2m_max,temperature_2m_min
+```
+
+---
+
+## 📂 Project Structure
+
+```
+src
+│
+├── App.jsx            # Main class component
+├── Date.jsx
+├── Weather.jsx           # Weather day component
+├── main.jsx          # React entry point
+└── index.css        # Application styles
+```
+
+---
+
+## ⚙️ Installation
+
+1️⃣ Clone the repository
+
+```
+git clone https://github.com/your-username/classy-weather.git
+```
+
+2️⃣ Navigate into the project folder
+
+```
+cd classy-weather
+```
+
+3️⃣ Install dependencies
+
+```
+npm install
+```
+
+4️⃣ Start the development server
+
+```
+npm start
+```
+
+The application will run on:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 📸 Example Output
+
+The app displays:
+
+* Weather icon
+* Day of the week
+* Minimum and maximum temperature
+
+Example:
+
+```
+☀️ Mon
+18° — 28°
+```
+
+---
+
+## 📖 Concepts Practiced
+
+This project demonstrates:
+
+* React **Class Components**
+* **State management** using `setState`
+* **Event handling**
+* **API fetching with async/await**
+* **Props passing between components**
+* **Conditional rendering**
+* **JavaScript Date formatting**
+
+---
+
+## 💡 Future Improvements
+
+* Add loading spinner
+* Add error handling UI
+* Display more weather details
+* Convert to **React Functional Components with Hooks**
+* Add responsive design
+
+---
+
+## 👨‍💻 Author
+
+Developed as a practice project for learning **React Class Components** and working with APIs.
+
+---
